@@ -1,4 +1,4 @@
-module github.com/sklinkert/alphavantage
+module github.com/OndrejKocak/alphavantage
 
 go 1.21.6
 
