@@ -39,6 +39,6 @@ func (c *Client) CurrencyExchangeRate(fromCurrency string, toCurrency string) (*
 	if err != nil {
 		return nil, err
 	}
-
+	println(body)
 	return toCurrencyExchangeRate(body)
 }
