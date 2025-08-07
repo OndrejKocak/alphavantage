@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-// InsiderTransaction represents a single insider transaction record.
+//CurrencyExchangeRate represent a exchange rate between 2 currencies.
 type CurrencyExchangeRate struct {
 	FromCurrencyCode string `json:"1. From_Currency Code"`
 	FromCurrencyName string `json:"2. From_Currency Name"`
@@ -29,8 +29,7 @@ func toCurrencyExchangeRate(buf []byte) (*CurrencyExchangeRate, error) {
 	}
 	return &currencyExchangeRateResponse.Rate, nil
 }
-
-// InsiderTransactions fetches and returns the insider transactions data for the specified symbol.
+// CurrencyExchangeRate fetches and returns the Currency Exchange Rate data for the specified fromCurrency and toCurrency.
 func (c *Client) CurrencyExchangeRate(fromCurrency string, toCurrency string) (*CurrencyExchangeRate, error) {
 	const function = "CURRENCY_EXCHANGE_RATE"
 	url := fmt.Sprintf("%s/query?function=%s&from_currency=%s&to_currency=%s&apikey=%s", baseURL, function, fromCurrency, toCurrency, c.apiKey)
